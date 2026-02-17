@@ -101,18 +101,6 @@ This enables evaluation of the **marginal environmental cost per performance imp
 
 ---
 
-## 🔁 Experimental Protocol
-
-- Stratified cross-validation  
-- Consistent preprocessing pipeline  
-- Controlled hyperparameter tuning  
-- Emissions tracked during training  
-- Results normalized for fair comparison  
-
-The goal is **comparability and reproducibility** rather than leaderboard performance.
-
----
-
 ## 🌱 Why This Matters
 
 Financial ML systems directly impact:
@@ -126,4 +114,11 @@ This repository supports **responsible and sustainable ML deployment** in fintec
 
 ---
 
+## 📂 Dataset
+
+This study uses the **Bondora Peer-to-Peer Lending Loan Data**, publicly available on Kaggle:
+
+🔗 https://www.kaggle.com/datasets/sid321axn/bondora-peer-to-peer-lending-loan-data
+
+Due to GitHub file size limitations, the dataset is **not included** in this repository.
 
