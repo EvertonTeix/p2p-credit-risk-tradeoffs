@@ -5,6 +5,7 @@ import seaborn as sns
 import time
 import shap
 import os
+import joblib
 
 from lime import lime_tabular
 from sklearn.tree import DecisionTreeClassifier
@@ -314,3 +315,26 @@ display(df_performance.round(4))
 
 print("\n=== CÓDIGO LATEX ===")
 print(df_performance.round(4).to_latex(index=False, escape=False, float_format="%.4f"))
+
+# =============================================================================
+# 6. EXPORTAÇÃO DOS MODELOS E DADOS
+# =============================================================================
+
+print("\n-> Exportando modelos e dados para a pasta 'models/'...")
+os.makedirs('../models', exist_ok=True)
+
+# Salvando modelos
+joblib.dump(best_dt, '../models/best_dt.joblib')
+joblib.dump(best_rf, '../models/best_rf.joblib')
+joblib.dump(best_lr, '../models/best_lr.joblib')
+joblib.dump(best_xgb, '../models/best_xgb.joblib')
+
+# Salvando dados
+joblib.dump(X_test_final, '../models/X_test_final.joblib')
+joblib.dump(y_test_final, '../models/y_test_final.joblib')
+joblib.dump(features_names_final, '../models/features_names_final.joblib')
+joblib.dump(numerical_features, '../models/numerical_features.joblib')
+joblib.dump(categorical_features, '../models/categorical_features.joblib')
+
+print("Exportação concluída!")
+

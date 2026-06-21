@@ -18,12 +18,15 @@ trade_off_pilares/
 │   ├── pipeline_raw.py         # Treinamento Base e Performance
 │   ├── pipeline_green_ai.py    # Rastreamento Energético
 │   ├── pipeline_dir.py         # Mitigação de Viés e Fairness
-│   └── topsis_analysis.py      # Cruzamento Multicritério
+│   ├── topsis_analysis.py      # Cruzamento Multicritério
+│   └── robustness_analysis.py  # Análise de Robustez (Feature Perturbation)
 ├── outputs/                    # Resultados gerados automaticamente
 │   ├── RAW_Outputs/            # CSVs de métricas e gráficos XAI (SHAP/LIME) 
 │   ├── GreenAI_Outputs/        # Consumo de energia e emissões de carbono
 │   ├── DIR_Outputs/            # Métricas de Fairness e XAI do modelo mitigado
-│   └── TOPSIS_Outputs/         # Ranking de Trade-off matemático definitivo
+│   ├── TOPSIS_Outputs/         # Ranking de Trade-off matemático definitivo
+│   └── Robustness_Outputs/     # Degradação de F1 e Flip Rate pós-perturbação
+├── models/                     # Modelos serializados (.joblib) e base de validação
 ├── gerar_tabelas.ipynb         # Notebook para geração de gráficos e tabelas LaTeX para o artigo
 ├── .gitignore
 ├── requirements.txt
@@ -73,6 +76,14 @@ O resultado final é exportado como um ranking (`topsis_ranking.csv`) demonstran
 
 ---
 
+## 🛡️ Robustez Adversarial
+
+Além dos 3 pilares matemáticos, o repositório inclui um módulo adicional de validação: a **Análise de Robustez por Perturbação de Features** (`robustness_analysis.py`).
+
+Ao invés de avaliar os modelos apenas em seu ambiente estático, este script carrega os modelos em cache (salvos na pasta `models/` durante a execução do `pipeline_raw.py`) e simula perturbações nas 5 variáveis mais importantes de cada modelo (identificadas localmente via SHAP). A análise mapeia a degradação de F1-Score e computa a métrica *Flip Rate* (taxa de inconsistência nas predições) de acordo com o aumento da magnitude de ruído, comprovando a resiliência estrutural dos algoritmos.
+
+---
+
 ## 🚀 Instalação e Uso
 
 ### Pré-requisitos
@@ -113,9 +124,12 @@ python src/pipeline_dir.py
 
 # 4. Compila os 3 Pilares e calcula o Vencedor
 python src/topsis_analysis.py
+
+# 5. Avalia a Robustez Adversarial (Pós-treino)
+python src/robustness_analysis.py
 ```
 
-Os resultados analíticos finais, bem como tabelas para LaTeX e gráficos cruzados, serão salvos automaticamente na pasta `outputs/`, subdivididos em `RAW_Outputs/`, `GreenAI_Outputs/`, `DIR_Outputs/` e `TOPSIS_Outputs/`.
+Os resultados analíticos finais, bem como tabelas para LaTeX e gráficos cruzados, serão salvos automaticamente na pasta `outputs/`, subdivididos em `RAW_Outputs/`, `GreenAI_Outputs/`, `DIR_Outputs/`, `TOPSIS_Outputs/` e `Robustness_Outputs/`.
 
 ---
 

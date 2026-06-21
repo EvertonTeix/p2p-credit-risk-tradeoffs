@@ -37089,25 +37089,25 @@
 /***/ })
 /******/ ]);
 //# sourceMappingURL=bundle.js.map </script></head><body>
-        <div class="lime top_div" id="top_divQ62IVRN2GZVD5IR"></div>
+        <div class="lime top_div" id="top_divB8D48KBEF3D6WO7"></div>
         
         <script>
-        var top_div = d3.select('#top_divQ62IVRN2GZVD5IR').classed('lime top_div', true);
+        var top_div = d3.select('#top_divB8D48KBEF3D6WO7').classed('lime top_div', true);
         
             var pp_div = top_div.append('div')
                                 .classed('lime predict_proba', true);
             var pp_svg = pp_div.append('svg').style('width', '100%');
-            var pp = new lime.PredictProba(pp_svg, ["0", "1"], [0.6893241934770842, 0.3106758065229157]);
+            var pp = new lime.PredictProba(pp_svg, ["0", "1"], [0.6893241934770843, 0.31067580652291565]);
             
         
         var exp_div;
             var exp = new lime.Explanation(["0", "1"]);
         
                 exp_div = top_div.append('div').classed('lime explanation', true);
-                exp.show([["0.80 < LoanDuration <= 1.00", 0.10735302428856414], ["LanguageCode_6 <= 0.00", -0.06141954222170108], ["MaritalStatus > 0.33", -0.05636148413812182], ["Interest <= 0.08", -0.043554390210179234], ["AppliedAmount > 0.39", 0.039264378122136685]], 1, exp_div);
+                exp.show([["0.80 < LoanDuration <= 1.00", 0.10714316518242617], ["LanguageCode_6 <= 0.00", -0.06850031865679562], ["MaritalStatus > 0.33", -0.05570284056004021], ["Interest <= 0.08", -0.04190202426514497], ["LanguageCode_4 <= 0.00", -0.035933822017296814]], 1, exp_div);
                 
         var raw_div = top_div.append('div');
-            exp.show_raw_tabular([["LoanDuration", "1.00", 0.10735302428856414], ["LanguageCode_6", "0.00", -0.06141954222170108], ["MaritalStatus", "0.83", -0.05636148413812182], ["Interest", "0.04", -0.043554390210179234], ["AppliedAmount", "1.00", 0.039264378122136685]], 1, raw_div);
+            exp.show_raw_tabular([["LoanDuration", "1.00", 0.10714316518242617], ["LanguageCode_6", "0.00", -0.06850031865679562], ["MaritalStatus", "0.83", -0.05570284056004021], ["Interest", "0.04", -0.04190202426514497], ["LanguageCode_4", "0.00", -0.035933822017296814]], 1, raw_div);
         
         </script>
         </body></html>

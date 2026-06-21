@@ -1,0 +1,21 @@
+Model,Rank,Feature,Mean_Abs_SHAP
+Decision Tree,1,LoanDuration,0.0714682126840526
+Decision Tree,2,MaritalStatus,0.0646888170632041
+Decision Tree,3,Interest,0.03829524008697741
+Decision Tree,4,LossGivenDefault,0.03198942501003301
+Decision Tree,5,Education,0.028579458802359306
+Logistic Regression,1,LanguageCode_6,0.299676686428856
+Logistic Regression,2,LoanDuration,0.2990169017950087
+Logistic Regression,3,Education,0.20351481489818865
+Logistic Regression,4,LanguageCode_4,0.197779583453467
+Logistic Regression,5,AppliedAmount,0.12380507956548925
+Random Forest,1,LoanDuration,0.03824809372967534
+Random Forest,2,Interest,0.026509169391870233
+Random Forest,3,AppliedAmount,0.026211742697772853
+Random Forest,4,MaritalStatus,0.025437749538621015
+Random Forest,5,LossGivenDefault,0.019248422956015344
+XGBoost,1,LoanDuration,0.3237312436103821
+XGBoost,2,AppliedAmount,0.22603948414325714
+XGBoost,3,Interest,0.21003320813179016
+XGBoost,4,Education,0.15200985968112946
+XGBoost,5,LossGivenDefault,0.15124039351940155
